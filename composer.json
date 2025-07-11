@@ -15,5 +15,12 @@
             "name": "Maksym Sliusarchuk",
             "email": "max.slyusarchuk@gmail.com"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "providers" : [
+                "DamichiXL\\Settings\\Providers\\SettingsServiceProvider"
+            ]
+        }
+    }
 }
