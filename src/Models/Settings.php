@@ -9,7 +9,8 @@ class Settings extends Model
     protected $connection = 'sqlite';
 
     protected $fillable = [
-        'key', 'value',
+        'key',
+        'value',
     ];
 
     protected $casts = [
