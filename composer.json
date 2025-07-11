@@ -1,13 +1,13 @@
 {
-    "name": "damichixl/dynamic-database-connection",
-    "description": "Allows load database configuration dynamically",
+    "name": "damichixl/settings",
+    "description": "Allows load configuration dynamically",
     "type": "package",
     "require": {
         "laravel/framework": "^11.31"
     },
     "autoload": {
         "psr-4": {
-            "DamichiXL\\DynamicDatabaseConnection\\": "src/"
+            "DamichiXL\\Settings\\": "src/"
         }
     },
     "authors": [
