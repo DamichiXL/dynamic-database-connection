@@ -3,11 +3,11 @@
     "description": "Allows load database configuration dynamically",
     "type": "package",
     "require": {
-        "laravel/framework": "^12.20"
+        "laravel/framework": "^11.31"
     },
     "autoload": {
         "psr-4": {
-            "Damichixl\\DynamicDatabaseConnection\\": "src/"
+            "DamichiXL\\DynamicDatabaseConnection\\": "src/"
         }
     },
     "authors": [
