@@ -4,7 +4,7 @@ namespace DamichiXL\Settings\Providers;
 
 use DamichiXL\Settings\Facades\SettingsFacade;
 use DamichiXL\Settings\helpers\SettingsHelper;
-use DamichiXL\Settings\Models\Settings;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +14,7 @@ class SettingsServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/settings.php', 'settings');
 
-        $this->app->bind('settings', function () {
+        $this->app->bind('setting', function () {
             return new SettingsHelper;
         });
     }
@@ -28,7 +28,9 @@ class SettingsServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
 
         if (Schema::connection(config('settings.database.connection'))->hasTable('settings')) {
-            config(SettingsFacade::get());
+            $dotFlattenedSettings = Arr::dot(SettingsFacade::get());
+
+            config($dotFlattenedSettings);
         }
     }
 }
